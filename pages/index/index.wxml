@@ -1,0 +1,100 @@
+<view class="container">
+ 
+
+  <view class="header">
+    <view class="image-container">
+  <!-- src 填写图片地址，支持网络图片、本地临时文件路径、云存储路径 -->
+    <image 
+      src="/pages/index/中组合LOGOWEWARM加暖心你我-白色色.png"
+      mode="widthFix"  
+      class="custom-image"></image>
+  </view>
+    <view class="model-line">
+      <text class="model">{{model}}</text>
+    </view>
+  </view>
+
+  <view class="image-container2">
+  <!-- src 填写图片地址，支持网络图片、本地临时文件路径、云存储路径 -->
+    <image 
+      src="/pages/index/01-02.png"
+      mode="aspectFit"  
+      class="fan-image"></image>
+  </view>
+  
+  <!-- <view class="wifi-status" wx:if="{{wifiConnected}}">
+    <icon type="success" size="20" color="green" /> 蓝牙已连接
+  </view> -->
+  
+  <!--按钮*4，将摇头相关按钮放在同一行的容器内-->
+  <view class="controls-container">
+    <view class="controls">
+      <button class="open-btn" hover-class="open-btn1" bindtap="onFanSwitch" >
+        <text class="iconfont icon-kaiguan">开关</text>
+      </button>
+      <view class="button-container">
+        <view class="shake-buttons-row">
+          <button class="btn" hover-class="btn1" bindtap="onShakeOn" >
+            <view class="icon-wrapper">
+              <text class="iconfont icon-fengsu"></text>
+            </view>
+            <view class="text-wrapper">
+              <text>摇头开</text>
+            </view>
+          </button>
+          <label class="custom-label"></label>
+          <button class="btn" hover-class="btn1" bindtap="onShakeAngle">
+            <view class="icon-wrapper">
+              <text class="iconfont icon-jiaodu"></text>
+            </view>
+            <view class="text-wrapper">
+              <text>摇头角度</text>
+            </view>
+          </button>
+          <label class="custom-label"></label>
+          <view wx:if="{{showAngleModal}}" class="angle-modal">
+            <view class="angle-modal-content">
+              <text bindtap="selectAngle" data-angle="45" class="{{buttonStates.angleButtons['45'].colorClass}}">45度</text>
+              <text bindtap="selectAngle" data-angle="90" class="{{buttonStates.angleButtons['90'].colorClass}}">90度</text>
+              <text bindtap="selectAngle" data-angle="120" class="{{buttonStates.angleButtons['120'].colorClass}}">120度</text>
+              <button bindtap="closeAngleModal">取消</button>
+            </view>
+          </view>
+          <button class="btn" hover-class="btn1" bindtap="onShakeOff">
+            <view class="icon-wrapper">
+              <text class="iconfont icon-fengsu"></text>
+            </view>
+            <view class="text-wrapper">
+              <text>摇头关</text>
+            </view>
+          </button>
+        </view>
+      </view>
+      <!--风速挡位-->
+      <view class="slider-container">
+        <view class="slider-label">
+          <text class="iconfont icon-fengsuchuanganqi-copy">风速档位:</text>
+          <text class="wind-speed-value">{{windSpeed}}档</text>
+         </view>
+          
+          
+<!-- 直接使用字体Unicode码 -->
+         <view class="slider-icon">
+          <text class="iconfont iconfont icon-a-xinhaowangluo-01" style="font-size: 30px;  font-weight: bold;"wx:if="{{windSpeed <= 3}}"></text>
+          <text class="iconfont icon-a-xinhaowangluo-02" style="font-size: 30px;  font-weight: bold;"wx:elif="{{windSpeed <= 6}}"></text>
+          <text class="iconfont icon-a-xinhaowangluo-03"  style="font-size: 30px;  font-weight: bold;"wx:elif="{{windSpeed <= 9}}"></text>
+          <text class="iconfont icon-a-xinhaowangluo-04" style="font-size: 30px;  font-weight: bold;"wx:else></text>
+          </view>
+        <slider bindchange="onWindSpeedChange" min="1" max="12" value="{{windSpeed}}" style="height: 50rpx; display: block; box-sizing: border-box" activecolor="FFC0CB" backgroundcolor="178ca4">
+        </slider>
+      </view>
+      
+      <!--定时button-->
+      <button class="timer-btn" hover-class="timer-btn1" bindtap="showTimerPicker">
+        <picker mode="selector" range="{{timerRanges}}" value="{{timerValue}}" bindchange="onTimerSet" hidden="{{!showTimerPicker}}">
+          <view class="timer-picker" class="iconfont icon-naozhong">定时{{timerValuestring}}</view>
+        </picker>
+      </button>
+    </view>
+  </view>
+</view>

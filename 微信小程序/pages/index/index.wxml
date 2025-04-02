@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="header">
+    <text class="title">智能风扇</text>
+    <view class="model-line">
+      <text class="model">{{model}}</text>
+    </view>
+  </view>
+  <image class="fan-image" src="/images/fan.png" mode="aspectFit" animation="{{fanAnimation}}"></image>
+  <view class="wifi-status" wx:if="{{wifiConnected}}">
+    <icon type="success" size="20" color="green" /> Wi-Fi已连接
+  </view>
+  <!--按钮*4，将摇头相关按钮放在同一行的容器内-->
+  <view class="controls-container">
+    <view class="controls">
+      <button class="open-btn" bindtap="onFanSwitch" data-color-class="{{buttonStates.openBtn.colorClass}}">
+        <text class="iconfont icon-kaiguan">开关</text>
+      </button>
+      <view class="button-container">
+        <view class="shake-buttons-row">
+          <button class="btn" bindtap="onShakeOn" data-color-class="{{buttonStates.shakeOnBtn.colorClass}}">
+            <view class="icon-wrapper">
+              <text class="iconfont icon-fengsu"></text>
+            </view>
+            <view class="text-wrapper">
+              <text>摇头开</text>
+            </view>
+          </button>
+          <label class="custom-label"></label>
+          <button class="btn" bindtap="onShakeAngle">
+            <view class="icon-wrapper">
+              <text class="iconfont icon-jiaodu"></text>
+            </view>
+            <view class="text-wrapper">
+              <text>摇头角度</text>
+            </view>
+          </button>
+          <label class="custom-label"></label>
+          <view wx:if="{{showAngleModal}}" class="angle-modal">
+            <view class="angle-modal-content">
+              <text bindtap="selectAngle" data-angle="60">60度</text>
+              <text bindtap="selectAngle" data-angle="90">90度</text>
+              <text bindtap="selectAngle" data-angle="120">120度</text>
+              <button bindtap="closeAngleModal">取消</button>
+            </view>
+          </view>
+          <button class="btn" bindtap="onShakeOff" data-color-class="{{buttonStates.shakeOffBtn.colorClass}}">
+            <view class="icon-wrapper">
+              <text class="iconfont icon-fengsu"></text>
+            </view>
+            <view class="text-wrapper">
+              <text>摇头关</text>
+            </view>
+          </button>
+        </view>
+      </view>
+      <!--风速挡位-->
+      <view class="slider-container">
+        <view class="slider-label">
+          <text class="iconfont icon-fengsuchuanganqi-copy">风速档位:</text>
+          <text class="wind-speed-value">{{windSpeed}}档</text>
+        </view>
+        <slider bindchange="onWindSpeedChange" min="1" max="12" value="{{windSpeed}}"></slider>
+      </view>
+      <!--定时button-->
+      <button class="timer-btn" bindtap="showTimerPicker">
+        <picker mode="selector" range="{{timerRanges}}" value="{{timerValue}}" bindchange="onTimerSet" hidden="{{!showTimerPicker}}">
+          <view class="timer-picker" class="iconfont icon-naozhong">定时</view>
+        </picker>
+      </button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,460 @@
+/* 页面样式 */
+@import "/pages/style/iconfont.wxss";
+@import "/pages/style/iconfont1.wxss";
+body {
+  font-family: 'MicrosoftYaHei', sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  height: 100vh;
+  /* 100%视口高度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpZD0ic3ZnIiB2aWV3Qm94PSIwIDAgMTQ0MCA2OTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgY2xhc3M9InRyYW5zaXRpb24gZHVyYXRpb24tMzAwIGVhc2UtaW4tb3V0IGRlbGF5LTE1MCI+PHN0eWxlPgogICAgICAgICAgLnBhdGgtMHsKICAgICAgICAgICAgYW5pbWF0aW9uOnBhdGhBbmltLTAgNHM7CiAgICAgICAgICAgIGFuaW1hdGlvbi10aW1pbmctZnVuY3Rpb246IGxpbmVhcjsKICAgICAgICAgICAgYW5pbWF0aW9uLWl0ZXJhdGlvbi1jb3VudDogaW5maW5pdGU7CiAgICAgICAgICB9CiAgICAgICAgICBAa2V5ZnJhbWVzIHBhdGhBbmltLTB7CiAgICAgICAgICAgIDAlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDM1NiBDIDExMS42MDc2NTU1MDIzOTIzMywzNDkuMjM0NDQ5NzYwNzY1NTMgMjIzLjIxNTMxMTAwNDc4NDY3LDM0Mi40Njg4OTk1MjE1MzExIDMxNCwzMjggQyA0MDQuNzg0Njg4OTk1MjE1MzMsMzEzLjUzMTEwMDQ3ODQ2ODkgNDc0Ljc0NjQxMTQ4MzI1MzYsMjkxLjM1ODg1MTY3NDY0MTEzIDU2NSwyOTEgQyA2NTUuMjUzNTg4NTE2NzQ2NCwyOTAuNjQxMTQ4MzI1MzU4ODcgNzY1Ljc5OTA0MzA2MjIwMDksMzEyLjA5NTY5Mzc3OTkwNDMgODcxLDI2OCBDIDk3Ni4yMDA5NTY5Mzc3OTkxLDIyMy45MDQzMDYyMjAwOTU3IDEwNzYuMDU3NDE2MjY3OTQyNywxMTQuMjU4MzczMjA1NzQxNjMgMTE3MCw2OCBDIDEyNjMuOTQyNTgzNzMyMDU3MywyMS43NDE2MjY3OTQyNTgzNzMgMTM1MS45NzEyOTE4NjYwMjg3LDM4Ljg3MDgxMzM5NzEyOTE4IDE0NDAsNTYgTCAxNDQwLDcwMCBMIDAsNzAwIFoiKTsKICAgICAgICAgICAgfQogICAgICAgICAgICAyNSV7CiAgICAgICAgICAgICAgZDogcGF0aCgiTSAwLDcwMCBMIDAsMzU2IEMgMTIwLjgwMzgyNzc1MTE5NjE3LDM0MC40MjEwNTI2MzE1Nzg5NiAyNDEuNjA3NjU1NTAyMzkyMzMsMzI0Ljg0MjEwNTI2MzE1Nzg2IDM0MSwzMDkgQyA0NDAuMzkyMzQ0NDk3NjA3NjcsMjkzLjE1Nzg5NDczNjg0MjE0IDUxOC4zNzMyMDU3NDE2MjY3LDI3Ny4wNTI2MzE1Nzg5NDc0IDYxNiwyNjkgQyA3MTMuNjI2Nzk0MjU4MzczMywyNjAuOTQ3MzY4NDIxMDUyNiA4MzAuODk5NTIxNTMxMTAwNiwyNjAuOTQ3MzY4NDIxMDUyNiA5MTMsMjI3IEMgOTk1LjEwMDQ3ODQ2ODg5OTQsMTkzLjA1MjYzMTU3ODk0NzM3IDEwNDIuMDI4NzA4MTMzOTcxMywxMjUuMTU3ODk0NzM2ODQyMTEgMTEyNCw5MSBDIDEyMDUuOTcxMjkxODY2MDI4Nyw1Ni44NDIxMDUyNjMxNTc5IDEzMjIuOTg1NjQ1OTMzMDE0NCw1Ni40MjEwNTI2MzE1Nzg5NDUgMTQ0MCw1NiBMIDE0NDAsNzAwIEwgMCw3MDAgWiIpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIDUwJXsKICAgICAgICAgICAgICBkOiBwYXRoKCJNIDAsNzAwIEwgMCwzNTYgQyA5Mi4xODE4MTgxODE4MTgyMiwzNjUuOTIzNDQ0OTc2MDc2NTUgMTg0LjM2MzYzNjM2MzYzNjQzLDM3NS44NDY4ODk5NTIxNTMxIDI3NiwzNTQgQyAzNjcuNjM2MzYzNjM2MzYzNTcsMzMyLjE1MzExMDA0Nzg0NjkgNDU4LjcyNzI3MjcyNzI3MjYzLDI3OC41MzU4ODUxNjc0NjQxMyA1NDYsMjYxIEMgNjMzLjI3MjcyNzI3MjcyNzQsMjQzLjQ2NDExNDgzMjUzNTg3IDcxNi43MjcyNzI3MjcyNzI3LDI2Mi4wMDk1NjkzNzc5OTA1IDgyMiwyNTcgQyA5MjcuMjcyNzI3MjcyNzI3MywyNTEuOTkwNDMwNjIyMDA5NTQgMTA1NC4zNjM2MzYzNjM2MzY1LDIyMy40MjU4MzczMjA1NzQxNyAxMTYxLDE4NiBDIDEyNjcuNjM2MzYzNjM2MzYzNSwxNDguNTc0MTYyNjc5NDI1ODMgMTM1My44MTgxODE4MTgxODE4LDEwMi4yODcwODEzMzk3MTI5MSAxNDQwLDU2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgNzUlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDM1NiBDIDcwLjA4NjEyNDQwMTkxMzg4LDMzNy44MzczMjA1NzQxNjI3IDE0MC4xNzIyNDg4MDM4Mjc3NiwzMTkuNjc0NjQxMTQ4MzI1MzUgMjQ2LDI5NCBDIDM1MS44Mjc3NTExOTYxNzIyNCwyNjguMzI1MzU4ODUxNjc0NjUgNDkzLjM5NzEyOTE4NjYwMjksMjM1LjEzODc1NTk4MDg2MTI1IDU4NywyMzggQyA2ODAuNjAyODcwODEzMzk3MSwyNDAuODYxMjQ0MDE5MTM4NzUgNzI2LjIzOTIzNDQ0OTc2MDgsMjc5Ljc3MDMzNDkyODIyOTY2IDgxMCwyNjAgQyA4OTMuNzYwNzY1NTUwMjM5MiwyNDAuMjI5NjY1MDcxNzcwMzQgMTAxNS42NDU5MzMwMTQzNTQxLDE2MS43Nzk5MDQzMDYyMjAxIDExMjcsMTE4IEMgMTIzOC4zNTQwNjY5ODU2NDU5LDc0LjIyMDA5NTY5Mzc3OTkxIDEzMzkuMTc3MDMzNDkyODIyOCw2NS4xMTAwNDc4NDY4ODk5NiAxNDQwLDU2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgMTAwJXsKICAgICAgICAgICAgICBkOiBwYXRoKCJNIDAsNzAwIEwgMCwzNTYgQyAxMTEuNjA3NjU1NTAyMzkyMzMsMzQ5LjIzNDQ0OTc2MDc2NTUzIDIyMy4yMTUzMTEwMDQ3ODQ2NywzNDIuNDY4ODk5NTIxNTMxMSAzMTQsMzI4IEMgNDA0Ljc4NDY4ODk5NTIxNTMzLDMxMy41MzExMDA0Nzg0Njg5IDQ3NC43NDY0MTE0ODMyNTM2LDI5MS4zNTg4NTE2NzQ2NDExMyA1NjUsMjkxIEMgNjU1LjI1MzU4ODUxNjc0NjQsMjkwLjY0MTE0ODMyNTM1ODg3IDc2NS43OTkwNDMwNjIyMDA5LDMxMi4wOTU2OTM3Nzk5MDQzIDg3MSwyNjggQyA5NzYuMjAwOTU2OTM3Nzk5MSwyMjMuOTA0MzA2MjIwMDk1NyAxMDc2LjA1NzQxNjI2Nzk0MjcsMTE0LjI1ODM3MzIwNTc0MTYzIDExNzAsNjggQyAxMjYzLjk0MjU4MzczMjA1NzMsMjEuNzQxNjI2Nzk0MjU4MzczIDEzNTEuOTcxMjkxODY2MDI4NywzOC44NzA4MTMzOTcxMjkxOCAxNDQwLDU2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgIH08L3N0eWxlPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjUwJSIgeDI9IjEwMCUiIHkyPSI1MCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiM3YmRjYjUiPjwvc3RvcD48c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzhFRDFGQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0gMCw3MDAgTCAwLDM1NiBDIDExMS42MDc2NTU1MDIzOTIzMywzNDkuMjM0NDQ5NzYwNzY1NTMgMjIzLjIxNTMxMTAwNDc4NDY3LDM0Mi40Njg4OTk1MjE1MzExIDMxNCwzMjggQyA0MDQuNzg0Njg4OTk1MjE1MzMsMzEzLjUzMTEwMDQ3ODQ2ODkgNDc0Ljc0NjQxMTQ4MzI1MzYsMjkxLjM1ODg1MTY3NDY0MTEzIDU2NSwyOTEgQyA2NTUuMjUzNTg4NTE2NzQ2NCwyOTAuNjQxMTQ4MzI1MzU4ODcgNzY1Ljc5OTA0MzA2MjIwMDksMzEyLjA5NTY5Mzc3OTkwNDMgODcxLDI2OCBDIDk3Ni4yMDA5NTY5Mzc3OTkxLDIyMy45MDQzMDYyMjAwOTU3IDEwNzYuMDU3NDE2MjY3OTQyNywxMTQuMjU4MzczMjA1NzQxNjMgMTE3MCw2OCBDIDEyNjMuOTQyNTgzNzMyMDU3MywyMS43NDE2MjY3OTQyNTgzNzMgMTM1MS45NzEyOTE4NjYwMjg3LDM4Ljg3MDgxMzM5NzEyOTE4IDE0NDAsNTYgTCAxNDQwLDcwMCBMIDAsNzAwIFoiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIgZmlsbC1vcGFjaXR5PSIwLjQiIGNsYXNzPSJ0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0zMDAgZWFzZS1pbi1vdXQgZGVsYXktMTUwIHBhdGgtMCIgdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCA3MjAgMzUwKSI+PC9wYXRoPjxzdHlsZT4KICAgICAgICAgIC5wYXRoLTF7CiAgICAgICAgICAgIGFuaW1hdGlvbjpwYXRoQW5pbS0xIDRzOwogICAgICAgICAgICBhbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uOiBsaW5lYXI7CiAgICAgICAgICAgIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IGluZmluaXRlOwogICAgICAgICAgfQogICAgICAgICAgQGtleWZyYW1lcyBwYXRoQW5pbS0xewogICAgICAgICAgICAwJXsKICAgICAgICAgICAgICBkOiBwYXRoKCJNIDAsNzAwIEwgMCw1MzEgQyAxMTYuNjY5ODU2NDU5MzMwMTMsNTY4Ljg2NjAyODcwODEzNCAyMzMuMzM5NzEyOTE4NjYwMjcsNjA2LjczMjA1NzQxNjI2NzkgMzEzLDU5NSBDIDM5Mi42NjAyODcwODEzMzk3Myw1ODMuMjY3OTQyNTgzNzMyMSA0MzUuMzExMDA0Nzg0Njg5LDUyMS45Mzc3OTkwNDMwNjIzIDUyMiw0OTQgQyA2MDguNjg4OTk1MjE1MzExLDQ2Ni4wNjIyMDA5NTY5Mzc3IDczOS40MTYyNjc5NDI1ODM1LDQ3MS41MTY3NDY0MTE0ODMyIDg2Miw0NDEgQyA5ODQuNTgzNzMyMDU3NDE2NSw0MTAuNDgzMjUzNTg4NTE2OCAxMDk5LjAyMzkyMzQ0NDk3NjIsMzQzLjk5NTIxNTMxMTAwNDggMTE5NCwzMDMgQyAxMjg4Ljk3NjA3NjU1NTAyMzgsMjYyLjAwNDc4NDY4ODk5NTIgMTM2NC40ODgwMzgyNzc1MTE4LDI0Ni41MDIzOTIzNDQ0OTc2IDE0NDAsMjMxIEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgMjUlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDUzMSBDIDgzLjA1MjYzMTU3ODk0NzM3LDU1MC43OTkwNDMwNjIyMDEgMTY2LjEwNTI2MzE1Nzg5NDc0LDU3MC41OTgwODYxMjQ0MDE5IDI1Myw1NTEgQyAzMzkuODk0NzM2ODQyMTA1MjYsNTMxLjQwMTkxMzg3NTU5ODEgNDMwLjYzMTU3ODk0NzM2ODQ0LDQ3Mi40MDY2OTg1NjQ1OTMzNCA1MjYsNDIxIEMgNjIxLjM2ODQyMTA1MjYzMTYsMzY5LjU5MzMwMTQzNTQwNjY2IDcyMS4zNjg0MjEwNTI2MzE0LDMyNS43NzUxMTk2MTcyMjQ5IDg0MCwzMjEgQyA5NTguNjMxNTc4OTQ3MzY4NiwzMTYuMjI0ODgwMzgyNzc1MSAxMDk1Ljg5NDczNjg0MjEwNTQsMzUwLjQ5MjgyMjk2NjUwNzE2IDExOTksMzQyIEMgMTMwMi4xMDUyNjMxNTc4OTQ2LDMzMy41MDcxNzcwMzM0OTI4NCAxMzcxLjA1MjYzMTU3ODk0NzMsMjgyLjI1MzU4ODUxNjc0NjQgMTQ0MCwyMzEgTCAxNDQwLDcwMCBMIDAsNzAwIFoiKTsKICAgICAgICAgICAgfQogICAgICAgICAgICA1MCV7CiAgICAgICAgICAgICAgZDogcGF0aCgiTSAwLDcwMCBMIDAsNTMxIEMgOTIuMzQ0NDk3NjA3NjU1NDgsNTY5LjA2Njk4NTY0NTkzMzEgMTg0LjY4ODk5NTIxNTMxMDk3LDYwNy4xMzM5NzEyOTE4NjYgMjY5LDU3MiBDIDM1My4zMTEwMDQ3ODQ2ODkwMyw1MzYuODY2MDI4NzA4MTM0IDQyOS41ODg1MTY3NDY0MTE1LDQyOC41MzExMDA0Nzg0Njg5IDUzMiw0MDEgQyA2MzQuNDExNDgzMjUzNTg4NSwzNzMuNDY4ODk5NTIxNTMxMSA3NjIuOTU2OTM3Nzk5MDQzMSw0MjYuNzQxNjI2Nzk0MjU4MzcgODc5LDQyMSBDIDk5NS4wNDMwNjIyMDA5NTY5LDQxNS4yNTgzNzMyMDU3NDE2MyAxMDk4LjU4MzczMjA1NzQxNjIsMzUwLjUwMjM5MjM0NDQ5NzYgMTE5MCwzMDkgQyAxMjgxLjQxNjI2Nzk0MjU4MzgsMjY3LjQ5NzYwNzY1NTUwMjQgMTM2MC43MDgxMzM5NzEyOTE4LDI0OS4yNDg4MDM4Mjc3NTEyIDE0NDAsMjMxIEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgNzUlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDUzMSBDIDEyNi4zMjUzNTg4NTE2NzQ2Miw1MjMuOTI4MjI5NjY1MDcxNyAyNTIuNjUwNzE3NzAzMzQ5MjQsNTE2Ljg1NjQ1OTMzMDE0MzUgMzQwLDUwMCBDIDQyNy4zNDkyODIyOTY2NTA3Niw0ODMuMTQzNTQwNjY5ODU2NDYgNDc1LjcyMjQ4ODAzODI3NzU2LDQ1Ni41MDIzOTIzNDQ0OTc2NSA1NDQsNDQwIEMgNjEyLjI3NzUxMTk2MTcyMjQsNDIzLjQ5NzYwNzY1NTUwMjM1IDcwMC40NTkzMzAxNDM1NDA2LDQxNy4xMzM5NzEyOTE4NjYwMyA4MTYsNDA3IEMgOTMxLjU0MDY2OTg1NjQ1OTQsMzk2Ljg2NjAyODcwODEzMzk3IDEwNzQuNDQwMTkxMzg3NTU5NywzODIuOTYxNzIyNDg4MDM4MyAxMTgzLDM1MyBDIDEyOTEuNTU5ODA4NjEyNDQwMywzMjMuMDM4Mjc3NTExOTYxNyAxMzY1Ljc3OTkwNDMwNjIyLDI3Ny4wMTkxMzg3NTU5ODA4NiAxNDQwLDIzMSBMIDE0NDAsNzAwIEwgMCw3MDAgWiIpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIDEwMCV7CiAgICAgICAgICAgICAgZDogcGF0aCgiTSAwLDcwMCBMIDAsNTMxIEMgMTE2LjY2OTg1NjQ1OTMzMDEzLDU2OC44NjYwMjg3MDgxMzQgMjMzLjMzOTcxMjkxODY2MDI3LDYwNi43MzIwNTc0MTYyNjc5IDMxMyw1OTUgQyAzOTIuNjYwMjg3MDgxMzM5NzMsNTgzLjI2Nzk0MjU4MzczMjEgNDM1LjMxMTAwNDc4NDY4OSw1MjEuOTM3Nzk5MDQzMDYyMyA1MjIsNDk0IEMgNjA4LjY4ODk5NTIxNTMxMSw0NjYuMDYyMjAwOTU2OTM3NyA3MzkuNDE2MjY3OTQyNTgzNSw0NzEuNTE2NzQ2NDExNDgzMiA4NjIsNDQxIEMgOTg0LjU4MzczMjA1NzQxNjUsNDEwLjQ4MzI1MzU4ODUxNjggMTA5OS4wMjM5MjM0NDQ5NzYyLDM0My45OTUyMTUzMTEwMDQ4IDExOTQsMzAzIEMgMTI4OC45NzYwNzY1NTUwMjM4LDI2Mi4wMDQ3ODQ2ODg5OTUyIDEzNjQuNDg4MDM4Mjc3NTExOCwyNDYuNTAyMzkyMzQ0NDk3NiAxNDQwLDIzMSBMIDE0NDAsNzAwIEwgMCw3MDAgWiIpOwogICAgICAgICAgICB9CiAgICAgICAgICB9PC9zdHlsZT48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSI1MCUiIHgyPSIxMDAlIiB5Mj0iNTAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjN2JkY2I1Ij48L3N0b3A+PHN0b3Agb2Zmc2V0PSI5NSUiIHN0b3AtY29sb3I9IiM4RUQxRkMiPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNIDAsNzAwIEwgMCw1MzEgQyAxMTYuNjY5ODU2NDU5MzMwMTMsNTY4Ljg2NjAyODcwODEzNCAyMzMuMzM5NzEyOTE4NjYwMjcsNjA2LjczMjA1NzQxNjI2NzkgMzEzLDU5NSBDIDM5Mi42NjAyODcwODEzMzk3Myw1ODMuMjY3OTQyNTgzNzMyMSA0MzUuMzExMDA0Nzg0Njg5LDUyMS45Mzc3OTkwNDMwNjIzIDUyMiw0OTQgQyA2MDguNjg4OTk1MjE1MzExLDQ2Ni4wNjIyMDA5NTY5Mzc3IDczOS40MTYyNjc5NDI1ODM1LDQ3MS41MTY3NDY0MTE0ODMyIDg2Miw0NDEgQyA5ODQuNTgzNzMyMDU3NDE2NSw0MTAuNDgzMjUzNTg4NTE2OCAxMDk5LjAyMzkyMzQ0NDk3NjIsMzQzLjk5NTIxNTMxMTAwNDggMTE5NCwzMDMgQyAxMjg4Ljk3NjA3NjU1NTAyMzgsMjYyLjAwNDc4NDY4ODk5NTIgMTM2NC40ODgwMzgyNzc1MTE4LDI0Ni41MDIzOTIzNDQ0OTc2IDE0NDAsMjMxIEwgMTQ0MCw3MDAgTCAwLDcwMCBaIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0idXJsKCNncmFkaWVudCkiIGZpbGwtb3BhY2l0eT0iMC41MyIgY2xhc3M9InRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMCBlYXNlLWluLW91dCBkZWxheS0xNTAgcGF0aC0xIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDcyMCAzNTApIj48L3BhdGg+PHN0eWxlPgogICAgICAgICAgLnBhdGgtMnsKICAgICAgICAgICAgYW5pbWF0aW9uOnBhdGhBbmltLTIgNHM7CiAgICAgICAgICAgIGFuaW1hdGlvbi10aW1pbmctZnVuY3Rpb246IGxpbmVhcjsKICAgICAgICAgICAgYW5pbWF0aW9uLWl0ZXJhdGlvbi1jb3VudDogaW5maW5pdGU7CiAgICAgICAgICB9CiAgICAgICAgICBAa2V5ZnJhbWVzIHBhdGhBbmltLTJ7CiAgICAgICAgICAgIDAlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDcwNiBDIDExNy45OTA0MzA2MjIwMDk1Nyw3MjUuNjc0NjQxMTQ4MzI1MyAyMzUuOTgwODYxMjQ0MDE5MTQsNzQ1LjM0OTI4MjI5NjY1MDcgMzE3LDc0NiBDIDM5OC4wMTkxMzg3NTU5ODA4Niw3NDYuNjUwNzE3NzAzMzQ5MyA0NDIuMDY2OTg1NjQ1OTMzMSw3MjguMjc3NTExOTYxNzIyNCA1MzIsNjk0IEMgNjIxLjkzMzAxNDM1NDA2NjksNjU5LjcyMjQ4ODAzODI3NzYgNzU3Ljc1MTE5NjE3MjI0ODgsNjA5LjU0MDY2OTg1NjQ1OTQgODgwLDU2MyBDIDEwMDIuMjQ4ODAzODI3NzUxMiw1MTYuNDU5MzMwMTQzNTQwNiAxMTEwLjkyODIyOTY2NTA3MTcsNDczLjU1OTgwODYxMjQ0MDIgMTIwMiw0NDggQyAxMjkzLjA3MTc3MDMzNDkyODMsNDIyLjQ0MDE5MTM4NzU1OTggMTM2Ni41MzU4ODUxNjc0NjQxLDQxNC4yMjAwOTU2OTM3Nzk5IDE0NDAsNDA2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgMjUlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDcwNiBDIDc4LjQyMTA1MjYzMTU3ODkzLDcyNS43MTI5MTg2NjAyODcxIDE1Ni44NDIxMDUyNjMxNTc4Niw3NDUuNDI1ODM3MzIwNTc0MSAyNDUsNzIzIEMgMzMzLjE1Nzg5NDczNjg0MjE0LDcwMC41NzQxNjI2Nzk0MjU5IDQzMS4wNTI2MzE1Nzg5NDc0LDYzNi4wMDk1NjkzNzc5OTA0IDU0Miw1OTkgQyA2NTIuOTQ3MzY4NDIxMDUyNiw1NjEuOTkwNDMwNjIyMDA5NiA3NzYuOTQ3MzY4NDIxMDUyNiw1NTIuNTM1ODg1MTY3NDY0MSA4OTAsNTQ1IEMgMTAwMy4wNTI2MzE1Nzg5NDc0LDUzNy40NjQxMTQ4MzI1MzU5IDExMDUuMTU3ODk0NzM2ODQyLDUzMS44NDY4ODk5NTIxNTMxIDExOTUsNTA5IEMgMTI4NC44NDIxMDUyNjMxNTgsNDg2LjE1MzExMDA0Nzg0Njg0IDEzNjIuNDIxMDUyNjMxNTc5LDQ0Ni4wNzY1NTUwMjM5MjM0NSAxNDQwLDQwNiBMIDE0NDAsNzAwIEwgMCw3MDAgWiIpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIDUwJXsKICAgICAgICAgICAgICBkOiBwYXRoKCJNIDAsNzAwIEwgMCw3MDYgQyAxMDMuMzM5NzEyOTE4NjYwMyw3MjUuNjQ1OTMzMDE0MzU0MSAyMDYuNjc5NDI1ODM3MzIwNiw3NDUuMjkxODY2MDI4NzA4MSAzMTEsNzQ3IEMgNDE1LjMyMDU3NDE2MjY3OTQsNzQ4LjcwODEzMzk3MTI5MTkgNTIwLjYyMjAwOTU2OTM3OCw3MzIuNDc4NDY4ODk5NTIxNyA1OTgsNjg2IEMgNjc1LjM3Nzk5MDQzMDYyMiw2MzkuNTIxNTMxMTAwNDc4MyA3MjQuODMyNTM1ODg1MTY3NSw1NjIuNzk0MjU4MzczMjA1NyA4MjksNTM1IEMgOTMzLjE2NzQ2NDExNDgzMjUsNTA3LjIwNTc0MTYyNjc5NDMgMTA5Mi4wNDc4NDY4ODk5NTIsNTI4LjM0NDQ5NzYwNzY1NTUgMTIwMyw1MTUgQyAxMzEzLjk1MjE1MzExMDA0OCw1MDEuNjU1NTAyMzkyMzQ0NTQgMTM3Ni45NzYwNzY1NTUwMjQsNDUzLjgyNzc1MTE5NjE3MjI0IDE0NDAsNDA2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgNzUlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDcwNiBDIDgxLjYxNzIyNDg4MDM4Mjc2LDczOS4yNTM1ODg1MTY3NDY0IDE2My4yMzQ0NDk3NjA3NjU1Myw3NzIuNTA3MTc3MDMzNDkyOCAyNTcsNzY2IEMgMzUwLjc2NTU1MDIzOTIzNDQ3LDc1OS40OTI4MjI5NjY1MDcyIDQ1Ni42Nzk0MjU4MzczMjA1NCw3MTMuMjI0ODgwMzgyNzc1IDU1Miw2NTAgQyA2NDcuMzIwNTc0MTYyNjc5NSw1ODYuNzc1MTE5NjE3MjI1IDczMi4wNDc4NDY4ODk5NTIyLDUwNi41OTMzMDE0MzU0MDY4IDgzNSw0OTIgQyA5MzcuOTUyMTUzMTEwMDQ3OCw0NzcuNDA2Njk4NTY0NTkzMiAxMDU5LjEyOTE4NjYwMjg3MSw1MjguNDAxOTEzODc1NTk4MSAxMTYzLDUyNSBDIDEyNjYuODcwODEzMzk3MTI5LDUyMS41OTgwODYxMjQ0MDE5IDEzNTMuNDM1NDA2Njk4NTY0NSw0NjMuNzk5MDQzMDYyMjAwOTUgMTQ0MCw0MDYgTCAxNDQwLDcwMCBMIDAsNzAwIFoiKTsKICAgICAgICAgICAgfQogICAgICAgICAgICAxMDAlewogICAgICAgICAgICAgIGQ6IHBhdGgoIk0gMCw3MDAgTCAwLDcwNiBDIDExNy45OTA0MzA2MjIwMDk1Nyw3MjUuNjc0NjQxMTQ4MzI1MyAyMzUuOTgwODYxMjQ0MDE5MTQsNzQ1LjM0OTI4MjI5NjY1MDcgMzE3LDc0NiBDIDM5OC4wMTkxMzg3NTU5ODA4Niw3NDYuNjUwNzE3NzAzMzQ5MyA0NDIuMDY2OTg1NjQ1OTMzMSw3MjguMjc3NTExOTYxNzIyNCA1MzIsNjk0IEMgNjIxLjkzMzAxNDM1NDA2NjksNjU5LjcyMjQ4ODAzODI3NzYgNzU3Ljc1MTE5NjE3MjI0ODgsNjA5LjU0MDY2OTg1NjQ1OTQgODgwLDU2MyBDIDEwMDIuMjQ4ODAzODI3NzUxMiw1MTYuNDU5MzMwMTQzNTQwNiAxMTEwLjkyODIyOTY2NTA3MTcsNDczLjU1OTgwODYxMjQ0MDIgMTIwMiw0NDggQyAxMjkzLjA3MTc3MDMzNDkyODMsNDIyLjQ0MDE5MTM4NzU1OTggMTM2Ni41MzU4ODUxNjc0NjQxLDQxNC4yMjAwOTU2OTM3Nzk5IDE0NDAsNDA2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIik7CiAgICAgICAgICAgIH0KICAgICAgICAgIH08L3N0eWxlPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjUwJSIgeDI9IjEwMCUiIHkyPSI1MCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiM3YmRjYjUiPjwvc3RvcD48c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzhFRDFGQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0gMCw3MDAgTCAwLDcwNiBDIDExNy45OTA0MzA2MjIwMDk1Nyw3MjUuNjc0NjQxMTQ4MzI1MyAyMzUuOTgwODYxMjQ0MDE5MTQsNzQ1LjM0OTI4MjI5NjY1MDcgMzE3LDc0NiBDIDM5OC4wMTkxMzg3NTU5ODA4Niw3NDYuNjUwNzE3NzAzMzQ5MyA0NDIuMDY2OTg1NjQ1OTMzMSw3MjguMjc3NTExOTYxNzIyNCA1MzIsNjk0IEMgNjIxLjkzMzAxNDM1NDA2NjksNjU5LjcyMjQ4ODAzODI3NzYgNzU3Ljc1MTE5NjE3MjI0ODgsNjA5LjU0MDY2OTg1NjQ1OTQgODgwLDU2MyBDIDEwMDIuMjQ4ODAzODI3NzUxMiw1MTYuNDU5MzMwMTQzNTQwNiAxMTEwLjkyODIyOTY2NTA3MTcsNDczLjU1OTgwODYxMjQ0MDIgMTIwMiw0NDggQyAxMjkzLjA3MTc3MDMzNDkyODMsNDIyLjQ0MDE5MTM4NzU1OTggMTM2Ni41MzU4ODUxNjc0NjQxLDQxNC4yMjAwOTU2OTM3Nzk5IDE0NDAsNDA2IEwgMTQ0MCw3MDAgTCAwLDcwMCBaIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0idXJsKCNncmFkaWVudCkiIGZpbGwtb3BhY2l0eT0iMSIgY2xhc3M9InRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMCBlYXNlLWluLW91dCBkZWxheS0xNTAgcGF0aC0yIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDcyMCAzNTApIj48L3BhdGg+PC9zdmc+");
+  padding: 0;
+  border-radius: 0;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: 200% auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* .title {
+  margin-top: 10px;
+  font-size: 25px;
+  /* 增大标题文字大小 */
+   /*color: #0052cc;*/
+  /* 标题文字颜色改为深蓝色 */
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    margin: 20rpx;
+  }
+  
+  .custom-image {
+    max-width: 40%; /* 防止图片超出容器 */
+    height: auto;
+  }
+
+.model-line{
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: tomato;
+}
+
+.model {
+  margin: 3px;
+  color: white;
+  padding: 10px;
+}
+
+.fan-image {
+  width: 45vw; /* 宽度设置为视口宽度的30%，可根据实际需求调整比例 */
+  height: 45vw; /* 高度也设置为视口宽度的30%，保持宽高比一致以确保圆形 */
+  margin-top: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.wifi-status {
+  color: green;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.controls-container {
+  max-height: 100%;
+  border: 5px solid #178ca4;
+  border-radius: 50px 50px 0px 0px;
+  border-bottom: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 15px;
+  padding-top: 5px; /* 可根据实际需求微调上移的距离 */
+	background-image: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpZD0ic3ZnIiB2aWV3Qm94PSIwIDAgMTQ0MCA2OTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgY2xhc3M9InRyYW5zaXRpb24gZHVyYXRpb24tMzAwIGVhc2UtaW4tb3V0IGRlbGF5LTE1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudCIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzdiZGNiNSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjOEVEMUZDIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTSAwLDcwMCBMIDAsMzM3IEMgNzguODUxNjc0NjQxMTQ4MzIsMzcyLjg1NjQ1OTMzMDE0MzU0IDE1Ny43MDMzNDkyODIyOTY2NCw0MDguNzEyOTE4NjYwMjg3MSAyNDksNDEzIEMgMzQwLjI5NjY1MDcxNzcwMzM2LDQxNy4yODcwODEzMzk3MTI5IDQ0NC4wMzgyNzc1MTE5NjE3LDM5MC4wMDQ3ODQ2ODg5OTUyNCA1NDUsMzM2IEMgNjQ1Ljk2MTcyMjQ4ODAzODMsMjgxLjk5NTIxNTMxMTAwNDc2IDc0NC4xNDM1NDA2Njk4NTY0LDIwMS4yNjc5NDI1ODM3MzIwNCA4MzYsMTk1IEMgOTI3Ljg1NjQ1OTMzMDE0MzYsMTg4LjczMjA1NzQxNjI2Nzk2IDEwMTMuMzg3NTU5ODA4NjEyNCwyNTYuOTIzNDQ0OTc2MDc2NTUgMTExMywyNDMgQyAxMjEyLjYxMjQ0MDE5MTM4NzYsMjI5LjA3NjU1NTAyMzkyMzQyIDEzMjYuMzA2MjIwMDk1NjkzOCwxMzMuMDM4Mjc3NTExOTYxNzIgMTQ0MCwzNyBMIDE0NDAsNzAwIEwgMCw3MDAgWiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjAiIGZpbGw9InVybCgjZ3JhZGllbnQpIiBmaWxsLW9wYWNpdHk9IjEiIGNsYXNzPSJ0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0zMDAgZWFzZS1pbi1vdXQgZGVsYXktMTUwIHBhdGgtMCI+PC9wYXRoPjwvc3ZnPg==");
+  display: flex;
+  flex-direction: column;
+	align-items: center;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 150% auto;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.open-btn {
+  letter-spacing: 5px;
+  flex: 1;
+  max-width: 150px;
+  margin: 10px;
+  margin-right: 20px;
+  padding: 10px 15px;
+  /* 调整按钮内边距 */
+  background-color: #178ca4;
+  color: white;
+  /* 按钮文字颜色改为白色 */
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+  /* 调整按钮文字大小 */
+  /* margin-right: 15px; */
+}
+
+.open-btn1 {
+  letter-spacing: 5px;
+  flex: 1;
+  max-width: 150px;
+  margin: 10px;
+  margin-right: 20px;
+  padding: 10px 15px;
+  /* 调整按钮内边距 */
+  background-color: #FFC0CB;
+  color: white;
+  /* 按钮文字颜色改为白色 */
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+  /* 调整按钮文字大小 */
+  /* margin-right: 15px; */
+}
+
+.open-btn[data-color-class="default"] {
+  background-color: #178ca4; /* 按钮默认颜色 */
+}
+
+.open-btn[data-color-class="default"]:active {
+  background-color: #FFC0CB; /* 按钮按下时的颜色 */
+}
+
+.btn[data-color-class="default"] {
+  background-color: #178ca4; /* 按钮默认颜色 */
+}
+
+.btn[data-color-class="default"]:active {
+  background-color: #FFC0CB; /* 按钮按下时的颜色 */
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+}
+
+.shake-buttons-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px; /* 添加底部间距 */
+  justify-content: space-around; /* 调整按钮的排列方式为均匀分布 */
+}
+
+/* 按钮图标包装样式 */
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+/* 按钮图标样式，增大图标尺寸 */
+.icon-wrapper text {
+  font-size: 18px; /* 根据需要调整此值来改变图标大小 */
+}
+
+/* 按钮文字包装样式 */
+.text-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.custom-label {
+  display: block;
+  margin: 10px 0;
+  width: 15px;
+}
+
+/* 按钮样式调整 */
+.btn {
+  letter-spacing: 2px; 
+  flex: 1;
+  font-weight: normal;
+  max-width: 100px;
+  margin-top: 25px;
+  margin-left: 10px; /* 减少左侧外边距，避免按钮太靠边 */
+  margin-right: 10px; /* 设置右侧外边距，增加按钮间距离 */
+  padding: 10px 15px;
+  background-color: #178ca4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3 - 20px);
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+.btn1 {
+  letter-spacing: 2px; 
+  flex: 1;
+  font-weight: normal;
+  max-width: 100px;
+  margin-top: 25px;
+  margin-left: 10px; /* 减少左侧外边距，避免按钮太靠边 */
+  margin-right: 10px; /* 设置右侧外边距，增加按钮间距离 */
+  padding: 10px 15px;
+  background-color: #FFC0CB;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3 - 20px);
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+.angle-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+/* 弹出层内部内容的样式 */
+.angle-modal-content {
+  background-color: rgba(255, 255, 255, 0.9); /* 微调背景颜色透明度 */
+  padding: 20px;
+  border: 1px dashed #178ca4; /* 改为淡蓝色虚线边框 */
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 角度选项的样式 */
+.angle-modal-content text {
+  display: block;
+  padding: 10px;
+  border: 1px solid #178ca4; /* 保持淡蓝色边框 */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #178ca4; /* 改为白色文本颜色 */
+}
+
+/* 取消按钮的样式 */
+.angle-modal-content button {
+  background-color: #178ca4;
+  color: white; /* 改为白色文字颜色 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 风速档位容器样式 */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* 风速档位标签样式（包含图标和文本） */
+.slider-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.slider-icon{
+  color: #178ca4;
+  font-size: 35px;  
+  font-weight: bold;
+}
+/* 风速档位标签文本颜色修改为蓝色 */
+.slider-label text {
+  color: #178ca4;
+}
+
+/* 风速档位滑块样式 */
+slider {
+  width: 80%;
+  /* 根据需要调整滑块宽度 */
+  height: 10px;
+  /* 根据需要调整滑块高度 */
+  margin-top: 10px;
+}
+
+/*风速档位icon样式*/
+.wind-speed-icon {
+  font-size: 30px;
+  display: inline-block;
+  margin-right: 5rpx; /* 可调整图标与文字的间距 */
+}
+
+/* 风速档位滑块轨道样式 */
+slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background-color: #178ca4;
+  border-radius: 5px;
+}
+
+/* 隐藏slider默认的show - value显示样式 */
+slider[show-value]::after {
+  display: none;
+
+}
+
+/* 风速档位值的样式 */
+.wind-speed-value {
+  margin-left: 10px;
+  margin-right: 50px;
+  font-size: 15px;
+  color: #178ca4;
+}
+
+.timer-btn {
+  box-sizing: border-box; /* 确保元素尺寸计算正确 */
+  letter-spacing: 5px; 
+  width: 300px; /* 根据需要调整宽度，使其更长 */
+  flex: 1;
+  margin: 20px;
+  margin-right: 20px;
+  padding: 10px 15px;
+  /* 调整按钮内边距 */
+  background-color: #178ca4;
+  color: white;
+  /* 按钮文字颜色改为白色 */
+  /* border: none; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.timer-btn1 {
+  box-sizing: border-box; /* 确保元素尺寸计算正确 */
+  letter-spacing: 5px; 
+  width: 300px; /* 根据需要调整宽度，使其更长 */
+  flex: 1;
+  margin: 20px;
+  margin-right: 20px;
+  padding: 10px 15px;
+  /* 调整按钮内边距 */
+  background-color: #FFC0CB;
+  color: white;
+  /* 按钮文字颜色改为白色 */
+  /* border: none; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* 默认状态下的按钮样式，可作为基础样式供角度按钮使用 */
+.default {
+  background-color:white ;
+  color:#178ca4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 按钮激活状态下的样式，可作为基础样式供角度按钮使用 */
+.active {
+  background-color: #FFC0CB!important;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.timer-btn picker {
+  width: 100%; /* 让picker宽度占满整个按钮 */
+  height: 100%; /* 让picker高度占满整个按钮 */
+  margin: 0;
+  padding: 0;
+}
+
+.timer-picker {
+  pointer-events: none; /* 让内部的文字区域不响应点击事件，避免干扰按钮整体点击 */
+  font-weight: normal;
+  margin-top: 0;
+  color: white;
+}
+
+.timer-btn picker.picker-item.picker-item-selected {
+  background-color: #e6f7ff; /* 选中项的背景色，可与整体页面风格搭配 */
+  border-bottom: 5px solid #178ca4; /* 选中项下添加下划线 */
+}
+
+.timer-btn picker ::-webkit-scrollbar {
+  width: 10px; /* 滚动条宽度 */
+}
+
+.timer-btn picker ::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* 滚动条轨道颜色 */
+  border-radius: 3px; /* 轨道圆角 */
+}
+.timer-btn picker ::-webkit-scrollbar-thumb {
+  background-color: #178ca4; /* 滚动条滑块颜色 */
+  border-radius: 3px; /* 滑块圆角 */
+}
+
+.timer-btn:active {
+  animation: buttonClick 0.2s ease; /* 应用动画 */
+}
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

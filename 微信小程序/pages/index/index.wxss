@@ -1,0 +1,349 @@
+/* 页面样式 */
+@import "/pages/style/iconfont.wxss";
+body {
+  font-family: 'MicrosoftYaHei', sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  height: 100vh;
+  /* 100%视口高度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #e6f7ff, #b3e0ff);
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 25px;
+  /* 增大标题文字大小 */
+  color: #0052cc;
+  /* 标题文字颜色改为深蓝色 */
+}
+
+.model-line{
+  margin-top: 10px;
+  border: 2px solid #178ca4;
+  border-radius: 15px;
+}
+
+.model {
+  color: gray;
+  padding: 10px;
+}
+
+.fan-image {
+  width: 45vw; /* 宽度设置为视口宽度的30%，可根据实际需求调整比例 */
+  height: 45vw; /* 高度也设置为视口宽度的30%，保持宽高比一致以确保圆形 */
+  margin-top: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.wifi-status {
+  color: green;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.controls-container {
+  max-height: 100%;
+  border: 5px solid #178ca4;
+  border-radius: 50px 50px 0px 0px;
+  border-bottom: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 15px;
+  padding-top: 5px; /* 可根据实际需求微调上移的距离 */
+  background-color: rgba(224, 240, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.open-btn {
+  letter-spacing: 5px;
+  flex: 1;
+  max-width: 150px;
+  margin: 10px;
+  margin-right: 20px;
+  padding: 10px 15px;
+  /* 调整按钮内边距 */
+  background-color: #178ca4;
+  color: white;
+  /* 按钮文字颜色改为白色 */
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+  /* 调整按钮文字大小 */
+  /* margin-right: 15px; */
+}
+
+.open-btn[data-color-class="default"] {
+  background-color: #178ca4; /* 按钮默认颜色 */
+}
+
+.open-btn[data-color-class="default"]:active {
+  background-color: #FFC0CB; /* 按钮按下时的颜色 */
+}
+
+.btn[data-color-class="default"] {
+  background-color: #178ca4; /* 按钮默认颜色 */
+}
+
+.btn[data-color-class="default"]:active {
+  background-color: #FFC0CB; /* 按钮按下时的颜色 */
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+}
+
+.shake-buttons-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px; /* 添加底部间距 */
+  justify-content: space-around; /* 调整按钮的排列方式为均匀分布 */
+}
+
+/* 按钮图标包装样式 */
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+/* 按钮图标样式，增大图标尺寸 */
+.icon-wrapper text {
+  font-size: 18px; /* 根据需要调整此值来改变图标大小 */
+}
+
+/* 按钮文字包装样式 */
+.text-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.custom-label {
+  display: block;
+  margin: 10px 0;
+  width: 15px;
+}
+
+/* 按钮样式调整 */
+.btn {
+  letter-spacing: 2px; 
+  flex: 1;
+  font-weight: normal;
+  max-width: 100px;
+  margin-top: 25px;
+  margin-left: 10px; /* 减少左侧外边距，避免按钮太靠边 */
+  margin-right: 10px; /* 设置右侧外边距，增加按钮间距离 */
+  padding: 10px 15px;
+  background-color: #178ca4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3 - 20px);
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+.angle-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+/* 弹出层内部内容的样式 */
+.angle-modal-content {
+  background-color: rgba(255, 255, 255, 0.9); /* 微调背景颜色透明度 */
+  padding: 20px;
+  border: 1px dashed #178ca4; /* 改为淡蓝色虚线边框 */
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 角度选项的样式 */
+.angle-modal-content text {
+  display: block;
+  padding: 10px;
+  border: 1px solid #178ca4; /* 保持淡蓝色边框 */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #178ca4; /* 改为白色文本颜色 */
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.angle-modal-content text:active {
+  background-color: #178ca4; /* 点击时背景变为淡蓝色 */
+  color: white; /* 点击时文本颜色变为白色 */
+}
+
+/* 取消按钮的样式 */
+.angle-modal-content button {
+  background-color: #178ca4;
+  color: white; /* 改为白色文字颜色 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.angle-modal-content button:active {
+  background-color: #0e637c; /* 点击时背景颜色加深，增强交互反馈 */
+}
+
+/* 风速档位容器样式 */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* 风速档位标签样式（包含图标和文本） */
+.slider-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* 风速档位标签文本颜色修改为蓝色 */
+.slider-label text {
+  color: #178ca4;
+}
+
+/* 风速档位滑块样式 */
+slider {
+  width: 80%;
+  /* 根据需要调整滑块宽度 */
+  height: 10px;
+  /* 根据需要调整滑块高度 */
+  margin-top: 10px;
+}
+
+/* 风速档位滑块轨道样式 */
+slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background-color: #178ca4;
+  border-radius: 5px;
+}
+
+/* 隐藏slider默认的show - value显示样式 */
+slider[show-value]::after {
+  display: none;
+
+}
+
+/* 风速档位值的样式 */
+.wind-speed-value {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #178ca4;
+}
+
+.timer-btn {
+  box-sizing: border-box; /* 确保元素尺寸计算正确 */
+  letter-spacing: 5px; 
+  width: 300px; /* 根据需要调整宽度，使其更长 */
+  flex: 1;
+  margin: 20px;
+  margin-right: 20px;
+  padding: 10px 15px;
+  /* 调整按钮内边距 */
+  background-color: #178ca4;
+  color: white;
+  /* 按钮文字颜色改为白色 */
+  /* border: none; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.timer-btn picker {
+  width: 100%; /* 让picker宽度占满整个按钮 */
+  height: 100%; /* 让picker高度占满整个按钮 */
+  margin: 0;
+  padding: 0;
+}
+
+.timer-picker {
+  pointer-events: none; /* 让内部的文字区域不响应点击事件，避免干扰按钮整体点击 */
+  font-weight: normal;
+  margin-top: 0;
+  color: white;
+}
+
+.timer-btn picker.picker-item.picker-item-selected {
+  background-color: #e6f7ff; /* 选中项的背景色，可与整体页面风格搭配 */
+  border-bottom: 5px solid #178ca4; /* 选中项下添加下划线 */
+}
+
+.timer-btn picker ::-webkit-scrollbar {
+  width: 10px; /* 滚动条宽度 */
+}
+
+.timer-btn picker ::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* 滚动条轨道颜色 */
+  border-radius: 3px; /* 轨道圆角 */
+}
+.timer-btn picker ::-webkit-scrollbar-thumb {
+  background-color: #178ca4; /* 滚动条滑块颜色 */
+  border-radius: 3px; /* 滑块圆角 */
+}
+
+.timer-btn:active {
+  animation: buttonClick 0.2s ease; /* 应用动画 */
+}
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
